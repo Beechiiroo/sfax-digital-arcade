@@ -2,41 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Sfax Store Design System - Gaming E-commerce inspired by Steam
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core background and text */
+    --background: 210 11% 15%;
+    --foreground: 210 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card and surfaces */
+    --card: 210 15% 18%;
+    --card-foreground: 210 20% 95%;
+    --card-hover: 210 15% 22%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover */
+    --popover: 210 15% 18%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary brand color - Steam blue */
+    --primary: 209 100% 55%;
+    --primary-foreground: 210 20% 98%;
+    --primary-hover: 209 100% 60%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - darker surface */
+    --secondary: 210 12% 12%;
+    --secondary-foreground: 210 20% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted text and surfaces */
+    --muted: 210 15% 25%;
+    --muted-foreground: 210 10% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - gaming orange for promotions */
+    --accent: 25 95% 60%;
+    --accent-foreground: 210 20% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Success - green for purchase/positive actions */
+    --success: 142 76% 36%;
+    --success-foreground: 210 20% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Warning - yellow for notifications */
+    --warning: 45 93% 58%;
+    --warning-foreground: 210 20% 10%;
 
-    --radius: 0.5rem;
+    /* Destructive - red for remove/delete */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 20% 98%;
+
+    /* Borders and inputs */
+    --border: 210 15% 25%;
+    --input: 210 15% 20%;
+    --ring: 209 100% 55%;
+
+    /* Gaming gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(209 100% 45%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(15 95% 55%));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(210 15% 16%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 15% 10%), hsl(210 15% 18%));
+
+    /* Shadows for depth */
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 4px 20px hsl(210 15% 8% / 0.4);
+    --shadow-elevated: 0 8px 32px hsl(210 15% 5% / 0.6);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -55,42 +89,17 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  /* Light mode variation (optional) */
+  .light {
+    --background: 210 20% 98%;
+    --foreground: 210 15% 15%;
+    --card: 210 20% 95%;
+    --card-foreground: 210 15% 15%;
+    --card-hover: 210 20% 90%;
+    --muted: 210 15% 85%;
+    --muted-foreground: 210 10% 40%;
+    --border: 210 15% 80%;
+    --input: 210 20% 95%;
   }
 }
 
@@ -100,6 +109,112 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+    background-image: radial-gradient(circle at 20% 80%, hsl(210 15% 8% / 0.3) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, hsl(209 100% 55% / 0.1) 0%, transparent 50%);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Gaming-style scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--secondary));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary));
+  }
+}
+
+@layer components {
+  /* Gaming card effects */
+  .gaming-card {
+    @apply bg-gradient-to-br from-card to-card/80 backdrop-blur-sm border border-border/50;
+    @apply hover:border-primary/30 transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+
+  .gaming-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Capsule style for product cards */
+  .product-capsule {
+    @apply relative overflow-hidden rounded-lg bg-gradient-to-br from-card to-secondary;
+    @apply border border-border/30 hover:border-primary/50;
+    @apply transition-all duration-300 hover:scale-[1.02];
+  }
+
+  /* Hero section styling */
+  .hero-section {
+    background: var(--gradient-hero);
+    position: relative;
+  }
+
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, hsl(var(--background) / 0.8) 100%);
+  }
+
+  /* Glowing button effect */
+  .btn-glow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-glow:hover::before {
+    left: 100%;
+  }
+
+  /* Price styling */
+  .price-tag {
+    @apply bg-gradient-to-r from-accent to-accent/80 text-accent-foreground;
+    @apply px-3 py-1 rounded-full text-sm font-bold;
+  }
+
+  .price-original {
+    @apply text-muted-foreground line-through text-sm;
+  }
+
+  /* Status badges */
+  .badge-new {
+    @apply bg-gradient-to-r from-success to-success/80 text-success-foreground;
+  }
+
+  .badge-sale {
+    @apply bg-gradient-to-r from-accent to-accent/80 text-accent-foreground;
+  }
+
+  .badge-popular {
+    @apply bg-gradient-to-r from-primary to-primary/80 text-primary-foreground;
   }
 }
